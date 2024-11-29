@@ -94,10 +94,63 @@ TriggeredBy: ● docker.socket
 
 - **Active**: active (running) since Fri 2024-11-29 13:40:46 CET; 9min ago
 
-- Main PID: Le processus principal du démon Docker (dockerd) est identifié par le numéro de processus 1652.
-- Tasks: Docker gère actuellement 14 tâches ou threads.
-- Memory: Docker utilise 100.2 Mo de mémoire.
-- CPU: Il a consommé 536 ms de temps processeur jusqu'à présent.
+- **Main PID:** Le processus principal du démon Docker (dockerd) est identifié par le numéro de processus 1652.
+- **Tasks:** Docker gère actuellement 14 tâches ou threads.
+- **Memory:** Docker utilise 100.2 Mo de mémoire.
+- **CPU:** Il a consommé 536 ms de temps processeur jusqu'à présent.
+
+### EXCECUTER DOCKER
+
+- Nous allons l'exécuter avec sudo
+
+- Vous pouvez exécuter Docker avec sudo pour vérifier que cela fonctionne avec les privilèges administratifs :
+
+```
+sudo docker run hello-world
+```
+
+## Explications détaillées
+
+### Téléchargement de l'image "hello-world" :
+
+Docker a cherché l'image hello-world localement. Comme elle n'était pas présente, Docker l'a téléchargée depuis Docker Hub, le registre d'images par défaut.
+
+### Création d'un conteneur :
+
+Une fois l'image téléchargée, Docker a créé un conteneur basé sur cette image.
+
+### Exécution du conteneur :
+
+Le conteneur a exécuté un petit programme qui produit le message "Hello from Docker!".
+
+Affichage de la sortie : Docker a redirigé la sortie de ce programme vers votre terminal, confirmant que tout fonctionne correctement.
+
+## Lancer un conteneur interactif Ubuntu :
+
+- à présent nous allons Tester un environnement Ubuntu isolé :
+
+```
+docker run -it ubuntu bash
+```
+
+- Mais cela nes sembe pas focntionner alors nous allons passer par quelques étapes subsidiaires
+
+### Etape 1 : Ajouter l'utilisateur au groupe Docker
+
+Ajouter votre utilisateur au groupe docker :
+
+```
+sudo usermod -aG docker $USER
+```
+
+- Confirmez que le groupe Docker existe : si nous voulons etre sur que le groupe docker est actif
+
+```
+❯ getent group docker
+docker:x:995:meodel
+```
+
+- Pusi pour que les changements soient pris en compte nous allons deconnecter notre session et la relancer
 
 <a href="#sommaire">
   <img src="../assets/button/back_to_top.png" alt="Back to top" style="width: 150px; height: auto;">
