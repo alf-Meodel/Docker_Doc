@@ -6,8 +6,11 @@
 
 # Sommaire
 
-- [Mise en place Linux](./doc/mise-en-place-linux.md)
-- [Mise en place Windows](./doc/mise-en-place-windows.md)
+<!-- - [Mise en place Linux](./doc/mise-en-place-linux.md)
+- [Mise en place Windows](./doc/mise-en-place-windows.md) -->
+
+
+- [Linux setup](./doc/linux_setup.md)
 
 # Presentation
 
